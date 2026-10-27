@@ -1,0 +1,40 @@
+version: 1
+paths:
+  - src/components/**
+  - src/utils/**
+  - src/common/**
+  - src/routes/**/index.ts
+  - src/routes/index.ts
+  - packages/*/package.json
+  - package.json
+  - pnpm-lock.yaml
+  - package-lock.json
+  - yarn.lock
+  - "**/i18n/**"
+  - "**/locales/**"
+  - "**/*.theme.*"
+  - "**/theme/**"
+policy:
+  max_parallel_touching_commons: 1
+  require_claim_before_edit: true
+hints:
+  路由:
+    - src/routes/**
+  组件:
+    - src/components/**
+  公共:
+    - src/components/**
+    - src/utils/**
+    - src/common/**
+  文案:
+    - "**/i18n/**"
+    - "**/locales/**"
+  依赖:
+    - package.json
+    - pnpm-lock.yaml
+    - package-lock.json
+    - yarn.lock
+  样式:
+    - "**/*.theme.*"
+    - "**/theme/**"
+    - "**/*.module.less"

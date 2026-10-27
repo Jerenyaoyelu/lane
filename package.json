@@ -1,0 +1,19 @@
+{
+  "name": "lane",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Multi-requirement parallel orchestrator: Planner + Workers for git worktrees",
+  "license": "Apache-2.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build -w @lane/core && npm run build -w @lane/planner && npm run build -w @lane/cli",
+    "lane": "node packages/cli/dist/index.js",
+    "test": "npm run test -w @lane/core && npm run test -w @lane/planner",
+    "typecheck": "npm run typecheck -w @lane/core && npm run typecheck -w @lane/planner && npm run typecheck -w @lane/cli"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
